@@ -19,6 +19,14 @@ helps['spring-cloud create'] = """
       text: az spring-cloud create -n MyService -g MyResourceGroup -l westus
 """
 
+helps['spring-cloud update'] = """
+    type: command
+    short-summary: Update pricing tier of an Azure Spring Cloud.
+    examples:
+    - name: Update pricing tier.
+      text: az spring-cloud update -n MyService --sku Standard -g MyResourceGroup
+"""
+
 helps['spring-cloud delete'] = """
     type: command
     short-summary: Delete an Azure Spring Cloud.
@@ -145,6 +153,37 @@ helps['spring-cloud app show-deploy-log'] = """
 helps['spring-cloud app log tail'] = """
     type: command
     short-summary: Show logs of an app instance, logs will be streamed when setting '-f/--follow'.
+"""
+
+helps['spring-cloud app identity'] = """
+    type: group
+    short-summary: Manage an app's managed service identity.
+"""
+
+helps['spring-cloud app identity assign'] = """
+    type: command
+    short-summary: Enable managed service identity on an app.
+    examples:
+    - name: Enable the system assigned identity.
+      text: az spring-cloud app identity assign -n MyApp -s MyCluster -g MyResourceGroup
+    - name: Enable the system assigned identity on an app with the 'Reader' role.
+      text: az spring-cloud app identity assign -n MyApp -s MyCluster -g MyResourceGroup --role Reader --scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/xxxxx/providers/Microsoft.KeyVault/vaults/xxxxx
+"""
+
+helps['spring-cloud app identity remove'] = """
+    type: command
+    short-summary: Remove managed service identity from an app.
+    examples:
+    - name: Remove the system assigned identity from an app.
+      text: az spring-cloud app identity remove -n MyApp -s MyCluster -g MyResourceGroup
+"""
+
+helps['spring-cloud app identity show'] = """
+    type: command
+    short-summary: Display app's managed identity info.
+    examples:
+    - name: Display an app's managed identity info.
+      text: az spring-cloud app identity show -n MyApp -s MyCluster -g MyResourceGroup
 """
 
 helps['spring-cloud app set-deployment'] = """

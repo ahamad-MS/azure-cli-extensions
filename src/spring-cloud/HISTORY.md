@@ -1,6 +1,18 @@
 Release History
 ===============
 
+0.2.6
+-----
+* Fix required sku issue
+
+0.2.5
+-----
+* Enable to specified sku when create or update service instance
+
+0.2.4
+-----
+* Add command "az spring-cloud app identity" to support Managed Identity feature
+
 0.2.3
 -----
 * Add command "az spring-cloud app custom-domain" and "az spring-cloud certificate" to support Custom Domain feature.
